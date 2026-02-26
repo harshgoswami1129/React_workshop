@@ -4,7 +4,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import path from "path";
 import { fileURLToPath } from "url";
-// import registerRoutes from "./routes/registerRoutes.js";
+import registerRoutes from "./routes/registerRoutes.js";
 
 
 dotenv.config();
@@ -26,7 +26,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
-// app.use("/api/", registerRoutes);
+ app.use("/api/", registerRoutes);
 
 
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
